@@ -34,5 +34,4 @@ class CustomUserAdmin(UserAdmin):
         return JsonResponse({'valid': True})
 
 
-admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)

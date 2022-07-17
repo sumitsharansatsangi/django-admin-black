@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from django.http import JsonResponse
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.contrib.auth.admin import UserAdmin
 from django.views.decorators.csrf import csrf_exempt
 
@@ -34,4 +34,4 @@ class CustomUserAdmin(UserAdmin):
         return JsonResponse({'valid': True})
 
 
-admin.site.register(User, CustomUserAdmin)
+admin.site.register(settings.AUTH_USER_MODEL, CustomUserAdmin)
